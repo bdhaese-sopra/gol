@@ -27,7 +27,6 @@ class CellTests: XCTestCase {
         // Wrong index
         XCTAssertEqual(cell.getNeighbors(at: -1, for: gridSize).count, 0)
         XCTAssertEqual(cell.getNeighbors(at: 100, for: gridSize).count, 0)
-
         // top left and right edge
         XCTAssertEqual(cell.getNeighbors(at: 0, for: gridSize).count, 3)
         XCTAssertEqual(cell.getNeighbors(at: 9, for: gridSize).count, 3)

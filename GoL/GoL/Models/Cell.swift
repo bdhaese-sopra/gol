@@ -24,7 +24,7 @@ struct Cell {
     init(xPos: Int, yPos: Int) {
         self.xPos = xPos
         self.yPos = yPos
-        self.state = .dead
+        self.state = CellUtils.randomState()
     }
 
     /**
