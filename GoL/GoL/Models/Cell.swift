@@ -12,7 +12,7 @@ enum CellState {
     case dead
 
     func isAlive() -> Bool {
-        return false
+        return self == .alive
     }
 }
 

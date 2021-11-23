@@ -1,5 +1,5 @@
 //
-//  GoLTests.swift
+//  CellTests.swift
 //  GoLTests
 //
 //  Created by Bryan D'Haeseleer on 23/11/2021.
@@ -11,16 +11,16 @@ import XCTest
 class CellTests: XCTestCase {
 
     func testState() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
         var cell = Cell(xPos: 0, yPos: 0)
         cell.state = .alive
         XCTAssertTrue(cell.state.isAlive())
+
+        cell = Cell(xPos: 0, yPos: 0)
+        cell.state = .dead
+        XCTAssertFalse(cell.state.isAlive())
     }
 
     func testPotentialNeighbor() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
         let cell = Cell(xPos: 0, yPos: 0)
         let gridSize = GridSize(10)
 
