@@ -9,7 +9,7 @@ import Foundation
 
 struct GridSize {
     let size: Int
-    var maxSize: Int!
+    let maxSize: Int
 
     /// If the size is lesser than 10 the minimum size of 10 will be applied
     init(_ size: Int) {
