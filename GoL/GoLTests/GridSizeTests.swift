@@ -20,4 +20,18 @@ class GridSizeTests: XCTestCase {
         grid = GridSize(20)
         XCTAssertEqual(grid.size, 20)
     }
+
+    func testMaxSize() throws {
+        var grid = GridSize(-1)
+        XCTAssertEqual(grid.maxSize, 100)
+
+        grid = GridSize(9)
+        XCTAssertEqual(grid.maxSize, 100)
+
+        grid = GridSize(10)
+        XCTAssertEqual(grid.maxSize, 100)
+
+        grid = GridSize(20)
+        XCTAssertEqual(grid.maxSize, 400)
+    }
 }
