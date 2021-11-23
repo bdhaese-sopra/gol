@@ -12,6 +12,11 @@
 		8B4D9A3F274CE82C00EC08B6 /* GridSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4D9A3E274CE82C00EC08B6 /* GridSize.swift */; };
 		8B4D9A42274CEC4B00EC08B6 /* GridSizeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4D9A41274CEC4B00EC08B6 /* GridSizeTests.swift */; };
 		8B4D9A45274CED6700EC08B6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4D9A44274CED6700EC08B6 /* Constants.swift */; };
+		8B4D9A47274CFC6200EC08B6 /* Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4D9A46274CFC6200EC08B6 /* Grid.swift */; };
+		8B4D9A49274CFD3E00EC08B6 /* GridTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4D9A48274CFD3E00EC08B6 /* GridTests.swift */; };
+		8B4D9A4B274CFF1400EC08B6 /* CellUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4D9A4A274CFF1400EC08B6 /* CellUtils.swift */; };
+		8B4D9A4E274D10E600EC08B6 /* BoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4D9A4D274D10E600EC08B6 /* BoardView.swift */; };
+		8B4D9A50274D1FE700EC08B6 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4D9A4F274D1FE700EC08B6 /* Logger.swift */; };
 		8BA614C3274CDDA800B3A7C7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA614C2274CDDA800B3A7C7 /* AppDelegate.swift */; };
 		8BA614C5274CDDA800B3A7C7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA614C4274CDDA800B3A7C7 /* SceneDelegate.swift */; };
 		8BA614C7274CDDA800B3A7C7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA614C6274CDDA800B3A7C7 /* ViewController.swift */; };
@@ -41,6 +46,11 @@
 		8B4D9A3E274CE82C00EC08B6 /* GridSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridSize.swift; sourceTree = "<group>"; };
 		8B4D9A41274CEC4B00EC08B6 /* GridSizeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridSizeTests.swift; sourceTree = "<group>"; };
 		8B4D9A44274CED6700EC08B6 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		8B4D9A46274CFC6200EC08B6 /* Grid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grid.swift; sourceTree = "<group>"; };
+		8B4D9A48274CFD3E00EC08B6 /* GridTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridTests.swift; sourceTree = "<group>"; };
+		8B4D9A4A274CFF1400EC08B6 /* CellUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellUtils.swift; sourceTree = "<group>"; };
+		8B4D9A4D274D10E600EC08B6 /* BoardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardView.swift; sourceTree = "<group>"; };
+		8B4D9A4F274D1FE700EC08B6 /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		8BA614BF274CDDA800B3A7C7 /* GoL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoL.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BA614C2274CDDA800B3A7C7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8BA614C4274CDDA800B3A7C7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -100,6 +110,7 @@
 			children = (
 				8B4D9A3C274CE7C400EC08B6 /* Cell.swift */,
 				8B4D9A3E274CE82C00EC08B6 /* GridSize.swift */,
+				8B4D9A46274CFC6200EC08B6 /* Grid.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -107,9 +118,19 @@
 		8B4D9A43274CED5800EC08B6 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				8B4D9A4F274D1FE700EC08B6 /* Logger.swift */,
 				8B4D9A44274CED6700EC08B6 /* Constants.swift */,
+				8B4D9A4A274CFF1400EC08B6 /* CellUtils.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		8B4D9A4C274D10E600EC08B6 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				8B4D9A4D274D10E600EC08B6 /* BoardView.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		8BA614B6274CDDA800B3A7C7 = {
@@ -135,15 +156,16 @@
 		8BA614C1274CDDA800B3A7C7 /* GoL */ = {
 			isa = PBXGroup;
 			children = (
-				8B4D9A43274CED5800EC08B6 /* Utils */,
+				8BA614D0274CDDAB00B3A7C7 /* Info.plist */,
 				8BA614C2274CDDA800B3A7C7 /* AppDelegate.swift */,
 				8BA614C4274CDDA800B3A7C7 /* SceneDelegate.swift */,
 				8BA614C6274CDDA800B3A7C7 /* ViewController.swift */,
-				8BA614C8274CDDA800B3A7C7 /* Main.storyboard */,
 				8BA614CB274CDDAB00B3A7C7 /* Assets.xcassets */,
 				8BA614CD274CDDAB00B3A7C7 /* LaunchScreen.storyboard */,
-				8BA614D0274CDDAB00B3A7C7 /* Info.plist */,
+				8BA614C8274CDDA800B3A7C7 /* Main.storyboard */,
+				8B4D9A4C274D10E600EC08B6 /* Components */,
 				8B4D9A40274CE86200EC08B6 /* Models */,
+				8B4D9A43274CED5800EC08B6 /* Utils */,
 			);
 			path = GoL;
 			sourceTree = "<group>";
@@ -153,6 +175,7 @@
 			children = (
 				8B4D9A41274CEC4B00EC08B6 /* GridSizeTests.swift */,
 				8BA614D9274CDDAB00B3A7C7 /* CellTests.swift */,
+				8B4D9A48274CFD3E00EC08B6 /* GridTests.swift */,
 			);
 			path = GoLTests;
 			sourceTree = "<group>";
@@ -310,8 +333,12 @@
 				8B4D9A3F274CE82C00EC08B6 /* GridSize.swift in Sources */,
 				8BA614C7274CDDA800B3A7C7 /* ViewController.swift in Sources */,
 				8B4D9A3D274CE7C400EC08B6 /* Cell.swift in Sources */,
+				8B4D9A4B274CFF1400EC08B6 /* CellUtils.swift in Sources */,
 				8BA614C3274CDDA800B3A7C7 /* AppDelegate.swift in Sources */,
+				8B4D9A50274D1FE700EC08B6 /* Logger.swift in Sources */,
 				8BA614C5274CDDA800B3A7C7 /* SceneDelegate.swift in Sources */,
+				8B4D9A4E274D10E600EC08B6 /* BoardView.swift in Sources */,
+				8B4D9A47274CFC6200EC08B6 /* Grid.swift in Sources */,
 				8B4D9A45274CED6700EC08B6 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -321,6 +348,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B4D9A42274CEC4B00EC08B6 /* GridSizeTests.swift in Sources */,
+				8B4D9A49274CFD3E00EC08B6 /* GridTests.swift in Sources */,
 				8BA614DA274CDDAB00B3A7C7 /* CellTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
